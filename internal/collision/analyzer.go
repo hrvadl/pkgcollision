@@ -9,20 +9,20 @@ import (
 
 var Analyzer = analysis.Analyzer{
 	Name: "pkgcollision",
-	Doc:  "reports variable name collision with the package name",
+	Doc:  "reports variable name collision with the imported package name",
 	Run:  run,
 }
 
 func run(pass *analysis.Pass) (any, error) {
+	var detector *Detector
 	for _, file := range pass.Files {
-		detector := NewDetector(file)
+		detector = NewDetector(file)
 		collisions, err := detector.Detect()
 		if err != nil {
 			return nil, err
 		}
 		render(pass, collisions)
 	}
-
 	return nil, nil
 }
 

@@ -55,3 +55,11 @@ to unexpected errors, therefore it'd be better to avoid it.
 ## Inspired by
 
 - [100 Go mistakes and how to avoid them](https://www.manning.com/books/100-go-mistakes-and-how-to-avoid-them)
+
+## TODO
+
+- Add ignore comments
+- Add ignore path options
+- Enhace README.md
+- Add tests
+- More meaningfull error message
